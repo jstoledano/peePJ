@@ -118,5 +118,10 @@ class Seccion(models.Model):
     tipo = models.PositiveSmallIntegerField(choices=TIPO_SECCION)
     activa = models.BooleanField(default=True)
 
+    class Meta:
+        verbose_name = "Sección"
+        verbose_name_plural = "Secciones"
+        ordering = ['entidad', 'municipio', 'seccion']
+
     def __str__(self):
-        return f"{self.entidad.entidad:02d} - {self.municipio:03d} - {self.seccion:04d}"
+        return f"{self.entidad.entidad:02d} - {self.municipio.municipio:03d} - {self.seccion:04d}"

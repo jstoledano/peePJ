@@ -5,7 +5,8 @@ from gis.models import (
     DistritoLocal,
     DJP,
     DJC,
-    Municipio
+    Municipio,
+    Seccion,
 )
 
 
@@ -15,3 +16,4 @@ admin.site.register(DistritoLocal)
 admin.site.register(DJP)
 admin.site.register(DJC)
 admin.site.register(Municipio)
+admin.site.register(Seccion)

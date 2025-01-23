@@ -1,0 +1,258 @@
+[
+{
+    "model": "gis.entidad",
+    "pk": 1,
+    "fields": {
+        "entidad": 1,
+        "nombre": "Aguascalientes"
+    }
+},
+{
+    "model": "gis.entidad",
+    "pk": 2,
+    "fields": {
+        "entidad": 2,
+        "nombre": "Baja California"
+    }
+},
+{
+    "model": "gis.entidad",
+    "pk": 3,
+    "fields": {
+        "entidad": 3,
+        "nombre": "Baja California Sur"
+    }
+},
+{
+    "model": "gis.entidad",
+    "pk": 4,
+    "fields": {
+        "entidad": 4,
+        "nombre": "Campeche"
+    }
+},
+{
+    "model": "gis.entidad",
+    "pk": 5,
+    "fields": {
+        "entidad": 5,
+        "nombre": "Coahuila"
+    }
+},
+{
+    "model": "gis.entidad",
+    "pk": 6,
+    "fields": {
+        "entidad": 6,
+        "nombre": "Colima"
+    }
+},
+{
+    "model": "gis.entidad",
+    "pk": 7,
+    "fields": {
+        "entidad": 7,
+        "nombre": "Chiapas"
+    }
+},
+{
+    "model": "gis.entidad",
+    "pk": 8,
+    "fields": {
+        "entidad": 8,
+        "nombre": "Chihuahua"
+    }
+},
+{
+    "model": "gis.entidad",
+    "pk": 9,
+    "fields": {
+        "entidad": 9,
+        "nombre": "Ciudad de México"
+    }
+},
+{
+    "model": "gis.entidad",
+    "pk": 10,
+    "fields": {
+        "entidad": 10,
+        "nombre": "Durango"
+    }
+},
+{
+    "model": "gis.entidad",
+    "pk": 11,
+    "fields": {
+        "entidad": 11,
+        "nombre": "Guanajuato"
+    }
+},
+{
+    "model": "gis.entidad",
+    "pk": 12,
+    "fields": {
+        "entidad": 12,
+        "nombre": "Guerrero"
+    }
+},
+{
+    "model": "gis.entidad",
+    "pk": 13,
+    "fields": {
+        "entidad": 13,
+        "nombre": "Hidalgo"
+    }
+},
+{
+    "model": "gis.entidad",
+    "pk": 14,
+    "fields": {
+        "entidad": 14,
+        "nombre": "Jalisco"
+    }
+},
+{
+    "model": "gis.entidad",
+    "pk": 15,
+    "fields": {
+        "entidad": 15,
+        "nombre": "México"
+    }
+},
+{
+    "model": "gis.entidad",
+    "pk": 16,
+    "fields": {
+        "entidad": 16,
+        "nombre": "Michoacán"
+    }
+},
+{
+    "model": "gis.entidad",
+    "pk": 17,
+    "fields": {
+        "entidad": 17,
+        "nombre": "Morelos"
+    }
+},
+{
+    "model": "gis.entidad",
+    "pk": 18,
+    "fields": {
+        "entidad": 18,
+        "nombre": "Nayarit"
+    }
+},
+{
+    "model": "gis.entidad",
+    "pk": 19,
+    "fields": {
+        "entidad": 19,
+        "nombre": "Nuevo León"
+    }
+},
+{
+    "model": "gis.entidad",
+    "pk": 20,
+    "fields": {
+        "entidad": 20,
+        "nombre": "Oaxaca"
+    }
+},
+{
+    "model": "gis.entidad",
+    "pk": 21,
+    "fields": {
+        "entidad": 21,
+        "nombre": "Puebla"
+    }
+},
+{
+    "model": "gis.entidad",
+    "pk": 22,
+    "fields": {
+        "entidad": 22,
+        "nombre": "Querétaro"
+    }
+},
+{
+    "model": "gis.entidad",
+    "pk": 23,
+    "fields": {
+        "entidad": 23,
+        "nombre": "Quintana Roo"
+    }
+},
+{
+    "model": "gis.entidad",
+    "pk": 24,
+    "fields": {
+        "entidad": 24,
+        "nombre": "San Luis Potosí"
+    }
+},
+{
+    "model": "gis.entidad",
+    "pk": 25,
+    "fields": {
+        "entidad": 25,
+        "nombre": "Sinaloa"
+    }
+},
+{
+    "model": "gis.entidad",
+    "pk": 26,
+    "fields": {
+        "entidad": 26,
+        "nombre": "Sonora"
+    }
+},
+{
+    "model": "gis.entidad",
+    "pk": 27,
+    "fields": {
+        "entidad": 27,
+        "nombre": "Tabasco"
+    }
+},
+{
+    "model": "gis.entidad",
+    "pk": 28,
+    "fields": {
+        "entidad": 28,
+        "nombre": "Tamaulipas"
+    }
+},
+{
+    "model": "gis.entidad",
+    "pk": 29,
+    "fields": {
+        "entidad": 29,
+        "nombre": "Tlaxcala"
+    }
+},
+{
+    "model": "gis.entidad",
+    "pk": 30,
+    "fields": {
+        "entidad": 30,
+        "nombre": "Veracruz"
+    }
+},
+{
+    "model": "gis.entidad",
+    "pk": 31,
+    "fields": {
+        "entidad": 31,
+        "nombre": "Yucatán"
+    }
+},
+{
+    "model": "gis.entidad",
+    "pk": 32,
+    "fields": {
+        "entidad": 32,
+        "nombre": "Zacatecas"
+    }
+}
+]

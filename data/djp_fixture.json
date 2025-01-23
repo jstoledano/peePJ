@@ -1,0 +1,20 @@
+[
+{
+    "model": "gis.djp",
+    "pk": 1,
+    "fields": {
+        "entidad": 29,
+        "djp": 1,
+        "nombre": "SANCHEZ PIEDRAS"
+    }
+},
+{
+    "model": "gis.djp",
+    "pk": 2,
+    "fields": {
+        "entidad": 29,
+        "djp": 2,
+        "nombre": "GURIDI Y ALCOCER"
+    }
+}
+]

@@ -1,0 +1,26 @@
+[
+{
+    "model": "gis.distritofederal",
+    "pk": 1,
+    "fields": {
+        "entidad": 29,
+        "distrito_federal": 1
+    }
+},
+{
+    "model": "gis.distritofederal",
+    "pk": 2,
+    "fields": {
+        "entidad": 29,
+        "distrito_federal": 2
+    }
+},
+{
+    "model": "gis.distritofederal",
+    "pk": 3,
+    "fields": {
+        "entidad": 29,
+        "distrito_federal": 3
+    }
+}
+]

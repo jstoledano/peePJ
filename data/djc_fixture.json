@@ -1,0 +1,56 @@
+[
+{
+    "model": "gis.djc",
+    "pk": 1,
+    "fields": {
+        "entidad": 29,
+        "djc": 1,
+        "nombre": "CUAHUTEMOC"
+    }
+},
+{
+    "model": "gis.djc",
+    "pk": 2,
+    "fields": {
+        "entidad": 29,
+        "djc": 2,
+        "nombre": "JUAREZ"
+    }
+},
+{
+    "model": "gis.djc",
+    "pk": 3,
+    "fields": {
+        "entidad": 29,
+        "djc": 3,
+        "nombre": "MORELOS"
+    }
+},
+{
+    "model": "gis.djc",
+    "pk": 4,
+    "fields": {
+        "entidad": 29,
+        "djc": 4,
+        "nombre": "OCAMPO"
+    }
+},
+{
+    "model": "gis.djc",
+    "pk": 5,
+    "fields": {
+        "entidad": 29,
+        "djc": 5,
+        "nombre": "XICOHTENCATL"
+    }
+},
+{
+    "model": "gis.djc",
+    "pk": 6,
+    "fields": {
+        "entidad": 29,
+        "djc": 6,
+        "nombre": "ZARAGOZA"
+    }
+}
+]
