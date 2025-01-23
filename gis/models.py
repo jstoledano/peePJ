@@ -1,3 +1,4 @@
+from django.utils import timezone
 from django.db import models
 
 
@@ -91,21 +92,22 @@ class Municipio(models.Model):
 
 class ZORE(models.Model):
     entidad = models.ForeignKey(Entidad, on_delete=models.CASCADE)
+    distrito = models.ForeignKey(DistritoFederal, on_delete=models.CASCADE)
     zore = models.PositiveSmallIntegerField()
     activa = models.BooleanField(default=True)
 
     def __str__(self):
-        return f"{self.seccion.distritofederal:02d} - {self.zore:03d}"
+        return f"{self.distrito.distrito_federal} - {self.zore:03d}"
 
 
 class ARE(models.Model):
     entidad = models.ForeignKey(Entidad, on_delete=models.CASCADE)
-    are = models.PositiveSmallIntegerField()
     zore = models.ForeignKey(ZORE, on_delete=models.CASCADE)
+    are = models.PositiveSmallIntegerField()
     activa = models.BooleanField(default=True)
 
     def __str__(self):
-        return f"{self.seccion.distritofederal:02d} - {self.zore:03d} - {self.are:03d}"
+        return f"{self.zore.distrito:02d} - {self.zore.zore:03d} - {self.are:03d}"
 
 
 class Seccion(models.Model):
@@ -125,3 +127,27 @@ class Seccion(models.Model):
 
     def __str__(self):
         return f"{self.entidad.entidad:02d} - {self.municipio.municipio:03d} - {self.seccion:04d}"
+
+
+class HistoricoPE(models.Model):
+    fecha = models.DateField(default=timezone.now)
+    observaciones = models.TextField(blank=True, null=True)
+    pe = models.PositiveIntegerField(blank=True, null=True)
+    ln = models.PositiveIntegerField(blank=True, null=True)
+
+    class Meta:
+        ordering = ['-fecha']  # Ordenar por fecha en orden descendente
+
+    def __str__(self):
+        return f"{self.fecha}: PE: {self.pe} - LN: {self.ln}"
+
+
+class EstadisticoSeccion(models.Model):
+    historico = models.ForeignKey(HistoricoPE, on_delete=models.CASCADE, related_name='estadisticos')
+    entidad = models.PositiveIntegerField()
+    seccion = models.PositiveIntegerField()
+    pe = models.PositiveIntegerField()
+    ln = models.PositiveIntegerField()
+
+    def __str__(self):
+        return f"Entidad: {self.entidad}, Seccion: {self.seccion}, PE: {self.pe}, LN: {self.ln}"
