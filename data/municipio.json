@@ -1,0 +1,662 @@
+[
+    {
+        "model": "gis.municipio",
+        "pk": 1,
+        "fields": {
+            "entidad": 29,
+            "municipio": 1,
+            "nombre": "AMAXAC DE GUERRERO",
+            "djp": 2,
+            "djc": 1
+        }
+    },
+    {
+        "model": "gis.municipio",
+        "pk": 2,
+        "fields": {
+            "entidad": 29,
+            "municipio": 2,
+            "nombre": "APETATITLAN DE ANTONIO CARVAJAL",
+            "djp": 2,
+            "djc": 1
+        }
+    },
+    {
+        "model": "gis.municipio",
+        "pk": 3,
+        "fields": {
+            "entidad": 29,
+            "municipio": 3,
+            "nombre": "APIZACO",
+            "djp": 1,
+            "djc": 1
+        }
+    },
+    {
+        "model": "gis.municipio",
+        "pk": 4,
+        "fields": {
+            "entidad": 29,
+            "municipio": 4,
+            "nombre": "ATLANGATEPEC",
+            "djp": 1,
+            "djc": 3
+        }
+    },
+    {
+        "model": "gis.municipio",
+        "pk": 5,
+        "fields": {
+            "entidad": 29,
+            "municipio": 5,
+            "nombre": "ATLTZAYANCA",
+            "djp": 1,
+            "djc": 2
+        }
+    },
+    {
+        "model": "gis.municipio",
+        "pk": 6,
+        "fields": {
+            "entidad": 29,
+            "municipio": 6,
+            "nombre": "CALPULALPAN",
+            "djp": 1,
+            "djc": 4
+        }
+    },
+    {
+        "model": "gis.municipio",
+        "pk": 7,
+        "fields": {
+            "entidad": 29,
+            "municipio": 7,
+            "nombre": "EL CARMEN TEQUEXQUITLA",
+            "djp": 1,
+            "djc": 2
+        }
+    },
+    {
+        "model": "gis.municipio",
+        "pk": 8,
+        "fields": {
+            "entidad": 29,
+            "municipio": 8,
+            "nombre": "CUAPIAXTLA",
+            "djp": 1,
+            "djc": 2
+        }
+    },
+    {
+        "model": "gis.municipio",
+        "pk": 9,
+        "fields": {
+            "entidad": 29,
+            "municipio": 9,
+            "nombre": "CUAXOMULCO",
+            "djp": 1,
+            "djc": 1
+        }
+    },
+    {
+        "model": "gis.municipio",
+        "pk": 10,
+        "fields": {
+            "entidad": 29,
+            "municipio": 10,
+            "nombre": "CHIAUTEMPAN",
+            "djp": 2,
+            "djc": 1
+        }
+    },
+    {
+        "model": "gis.municipio",
+        "pk": 11,
+        "fields": {
+            "entidad": 29,
+            "municipio": 11,
+            "nombre": "MUÑOZ DE DOMINGO ARENAS",
+            "djp": 1,
+            "djc": 3
+        }
+    },
+    {
+        "model": "gis.municipio",
+        "pk": 12,
+        "fields": {
+            "entidad": 29,
+            "municipio": 12,
+            "nombre": "ESPAÑITA",
+            "djp": 1,
+            "djc": 4
+        }
+    },
+    {
+        "model": "gis.municipio",
+        "pk": 13,
+        "fields": {
+            "entidad": 29,
+            "municipio": 13,
+            "nombre": "HUAMANTLA",
+            "djp": 1,
+            "djc": 2
+        }
+    },
+    {
+        "model": "gis.municipio",
+        "pk": 14,
+        "fields": {
+            "entidad": 29,
+            "municipio": 14,
+            "nombre": "HUEYOTLIPAN",
+            "djp": 1,
+            "djc": 4
+        }
+    },
+    {
+        "model": "gis.municipio",
+        "pk": 15,
+        "fields": {
+            "entidad": 29,
+            "municipio": 15,
+            "nombre": "IXTACUIXTLA DE MARIANO MATAMOROS",
+            "djp": 2,
+            "djc": 1
+        }
+    },
+    {
+        "model": "gis.municipio",
+        "pk": 16,
+        "fields": {
+            "entidad": 29,
+            "municipio": 16,
+            "nombre": "IXTENCO",
+            "djp": 1,
+            "djc": 2
+        }
+    },
+    {
+        "model": "gis.municipio",
+        "pk": 17,
+        "fields": {
+            "entidad": 29,
+            "municipio": 17,
+            "nombre": "MAZATECOCHCO DE JOSE MARIA MORELOS",
+            "djp": 2,
+            "djc": 5
+        }
+    },
+    {
+        "model": "gis.municipio",
+        "pk": 18,
+        "fields": {
+            "entidad": 29,
+            "municipio": 18,
+            "nombre": "CONTLA DE JUAN CUAMATZI",
+            "djp": 2,
+            "djc": 1
+        }
+    },
+    {
+        "model": "gis.municipio",
+        "pk": 19,
+        "fields": {
+            "entidad": 29,
+            "municipio": 19,
+            "nombre": "TEPETITLA DE LARDIZABAL",
+            "djp": 2,
+            "djc": 1
+        }
+    },
+    {
+        "model": "gis.municipio",
+        "pk": 20,
+        "fields": {
+            "entidad": 29,
+            "municipio": 20,
+            "nombre": "SANCTORUM DE LAZARO CARDENAS",
+            "djp": 1,
+            "djc": 4
+        }
+    },
+    {
+        "model": "gis.municipio",
+        "pk": 21,
+        "fields": {
+            "entidad": 29,
+            "municipio": 21,
+            "nombre": "NANACAMILPA DE MARIANO ARISTA",
+            "djp": 1,
+            "djc": 4
+        }
+    },
+    {
+        "model": "gis.municipio",
+        "pk": 22,
+        "fields": {
+            "entidad": 29,
+            "municipio": 22,
+            "nombre": "ACUAMANALA DE MIGUEL HIDALGO",
+            "djp": 2,
+            "djc": 6
+        }
+    },
+    {
+        "model": "gis.municipio",
+        "pk": 23,
+        "fields": {
+            "entidad": 29,
+            "municipio": 23,
+            "nombre": "NATIVITAS",
+            "djp": 2,
+            "djc": 6
+        }
+    },
+    {
+        "model": "gis.municipio",
+        "pk": 24,
+        "fields": {
+            "entidad": 29,
+            "municipio": 24,
+            "nombre": "PANOTLA",
+            "djp": 2,
+            "djc": 1
+        }
+    },
+    {
+        "model": "gis.municipio",
+        "pk": 25,
+        "fields": {
+            "entidad": 29,
+            "municipio": 25,
+            "nombre": "SAN PABLO DEL MONTE",
+            "djp": 2,
+            "djc": 5
+        }
+    },
+    {
+        "model": "gis.municipio",
+        "pk": 26,
+        "fields": {
+            "entidad": 29,
+            "municipio": 26,
+            "nombre": "SANTA CRUZ TLAXCALA",
+            "djp": 2,
+            "djc": 1
+        }
+    },
+    {
+        "model": "gis.municipio",
+        "pk": 27,
+        "fields": {
+            "entidad": 29,
+            "municipio": 27,
+            "nombre": "TENANCINGO",
+            "djp": 2,
+            "djc": 5
+        }
+    },
+    {
+        "model": "gis.municipio",
+        "pk": 28,
+        "fields": {
+            "entidad": 29,
+            "municipio": 28,
+            "nombre": "TEOLOCHOLCO",
+            "djp": 2,
+            "djc": 6
+        }
+    },
+    {
+        "model": "gis.municipio",
+        "pk": 29,
+        "fields": {
+            "entidad": 29,
+            "municipio": 29,
+            "nombre": "TEPEYANCO",
+            "djp": 2,
+            "djc": 6
+        }
+    },
+    {
+        "model": "gis.municipio",
+        "pk": 30,
+        "fields": {
+            "entidad": 29,
+            "municipio": 30,
+            "nombre": "TERRENATE",
+            "djp": 1,
+            "djc": 2
+        }
+    },
+    {
+        "model": "gis.municipio",
+        "pk": 31,
+        "fields": {
+            "entidad": 29,
+            "municipio": 31,
+            "nombre": "TETLA DE LA SOLIDARIDAD",
+            "djp": 1,
+            "djc": 3
+        }
+    },
+    {
+        "model": "gis.municipio",
+        "pk": 32,
+        "fields": {
+            "entidad": 29,
+            "municipio": 32,
+            "nombre": "TETLATLAHUCA",
+            "djp": 2,
+            "djc": 6
+        }
+    },
+    {
+        "model": "gis.municipio",
+        "pk": 33,
+        "fields": {
+            "entidad": 29,
+            "municipio": 33,
+            "nombre": "TLAXCALA",
+            "djp": 2,
+            "djc": 1
+        }
+    },
+    {
+        "model": "gis.municipio",
+        "pk": 34,
+        "fields": {
+            "entidad": 29,
+            "municipio": 34,
+            "nombre": "TLAXCO",
+            "djp": 1,
+            "djc": 3
+        }
+    },
+    {
+        "model": "gis.municipio",
+        "pk": 35,
+        "fields": {
+            "entidad": 29,
+            "municipio": 35,
+            "nombre": "TOCATLAN",
+            "djp": 1,
+            "djc": 1
+        }
+    },
+    {
+        "model": "gis.municipio",
+        "pk": 36,
+        "fields": {
+            "entidad": 29,
+            "municipio": 36,
+            "nombre": "TOTOLAC",
+            "djp": 2,
+            "djc": 1
+        }
+    },
+    {
+        "model": "gis.municipio",
+        "pk": 37,
+        "fields": {
+            "entidad": 29,
+            "municipio": 37,
+            "nombre": "ZITLALTEPEC DE TRINIDAD SANCHEZ SANTOS",
+            "djp": 1,
+            "djc": 2
+        }
+    },
+    {
+        "model": "gis.municipio",
+        "pk": 38,
+        "fields": {
+            "entidad": 29,
+            "municipio": 38,
+            "nombre": "TZOMPANTEPEC",
+            "djp": 1,
+            "djc": 1
+        }
+    },
+    {
+        "model": "gis.municipio",
+        "pk": 39,
+        "fields": {
+            "entidad": 29,
+            "municipio": 39,
+            "nombre": "XALOZTOC",
+            "djp": 1,
+            "djc": 1
+        }
+    },
+    {
+        "model": "gis.municipio",
+        "pk": 40,
+        "fields": {
+            "entidad": 29,
+            "municipio": 40,
+            "nombre": "XALTOCAN",
+            "djp": 1,
+            "djc": 1
+        }
+    },
+    {
+        "model": "gis.municipio",
+        "pk": 41,
+        "fields": {
+            "entidad": 29,
+            "municipio": 41,
+            "nombre": "PAPALOTLA DE XICOHTENCATL",
+            "djp": 2,
+            "djc": 5
+        }
+    },
+    {
+        "model": "gis.municipio",
+        "pk": 42,
+        "fields": {
+            "entidad": 29,
+            "municipio": 42,
+            "nombre": "XICOHTZINCO",
+            "djp": 2,
+            "djc": 6
+        }
+    },
+    {
+        "model": "gis.municipio",
+        "pk": 43,
+        "fields": {
+            "entidad": 29,
+            "municipio": 43,
+            "nombre": "YAUHQUEMEHCAN",
+            "djp": 1,
+            "djc": 1
+        }
+    },
+    {
+        "model": "gis.municipio",
+        "pk": 44,
+        "fields": {
+            "entidad": 29,
+            "municipio": 44,
+            "nombre": "ZACATELCO",
+            "djp": 2,
+            "djc": 6
+        }
+    },
+    {
+        "model": "gis.municipio",
+        "pk": 45,
+        "fields": {
+            "entidad": 29,
+            "municipio": 45,
+            "nombre": "SANTA APOLONIA TEACALCO",
+            "djp": 2,
+            "djc": 6
+        }
+    },
+    {
+        "model": "gis.municipio",
+        "pk": 46,
+        "fields": {
+            "entidad": 29,
+            "municipio": 46,
+            "nombre": "SANTA CRUZ QUILEHTLA",
+            "djp": 2,
+            "djc": 6
+        }
+    },
+    {
+        "model": "gis.municipio",
+        "pk": 47,
+        "fields": {
+            "entidad": 29,
+            "municipio": 47,
+            "nombre": "SAN JUAN HUACTZINCO",
+            "djp": 2,
+            "djc": 6
+        }
+    },
+    {
+        "model": "gis.municipio",
+        "pk": 48,
+        "fields": {
+            "entidad": 29,
+            "municipio": 48,
+            "nombre": "SANTA CATARINA AYOMETLA",
+            "djp": 2,
+            "djc": 6
+        }
+    },
+    {
+        "model": "gis.municipio",
+        "pk": 49,
+        "fields": {
+            "entidad": 29,
+            "municipio": 49,
+            "nombre": "SANTA ISABEL XILOXOXTLA",
+            "djp": 2,
+            "djc": 6
+        }
+    },
+    {
+        "model": "gis.municipio",
+        "pk": 50,
+        "fields": {
+            "entidad": 29,
+            "municipio": 50,
+            "nombre": "SAN JOSE TEACALCO",
+            "djp": 1,
+            "djc": 1
+        }
+    },
+    {
+        "model": "gis.municipio",
+        "pk": 51,
+        "fields": {
+            "entidad": 29,
+            "municipio": 51,
+            "nombre": "SAN FRANCISCO TETLANOHCAN",
+            "djp": 2,
+            "djc": 1
+        }
+    },
+    {
+        "model": "gis.municipio",
+        "pk": 52,
+        "fields": {
+            "entidad": 29,
+            "municipio": 52,
+            "nombre": "LA MAGDALENA TLALTELULCO",
+            "djp": 2,
+            "djc": 1
+        }
+    },
+    {
+        "model": "gis.municipio",
+        "pk": 53,
+        "fields": {
+            "entidad": 29,
+            "municipio": 53,
+            "nombre": "SAN DAMIAN TEXOLOC",
+            "djp": 2,
+            "djc": 6
+        }
+    },
+    {
+        "model": "gis.municipio",
+        "pk": 54,
+        "fields": {
+            "entidad": 29,
+            "municipio": 54,
+            "nombre": "EMILIANO ZAPATA",
+            "djp": 1,
+            "djc": 2
+        }
+    },
+    {
+        "model": "gis.municipio",
+        "pk": 55,
+        "fields": {
+            "entidad": 29,
+            "municipio": 55,
+            "nombre": "LAZARO CARDENAS",
+            "djp": 1,
+            "djc": 2
+        }
+    },
+    {
+        "model": "gis.municipio",
+        "pk": 56,
+        "fields": {
+            "entidad": 29,
+            "municipio": 56,
+            "nombre": "SAN JERONIMO ZACUALPAN",
+            "djp": 2,
+            "djc": 6
+        }
+    },
+    {
+        "model": "gis.municipio",
+        "pk": 57,
+        "fields": {
+            "entidad": 29,
+            "municipio": 57,
+            "nombre": "SAN LUCAS TECOPILCO",
+            "djp": 1,
+            "djc": 1
+        }
+    },
+    {
+        "model": "gis.municipio",
+        "pk": 58,
+        "fields": {
+            "entidad": 29,
+            "municipio": 58,
+            "nombre": "SANTA ANA NOPALUCAN",
+            "djp": 2,
+            "djc": 1
+        }
+    },
+    {
+        "model": "gis.municipio",
+        "pk": 59,
+        "fields": {
+            "entidad": 29,
+            "municipio": 59,
+            "nombre": "SAN LORENZO AXOCOMANITLA",
+            "djp": 2,
+            "djc": 6
+        }
+    },
+    {
+        "model": "gis.municipio",
+        "pk": 60,
+        "fields": {
+            "entidad": 29,
+            "municipio": 60,
+            "nombre": "BENITO JUAREZ",
+            "djp": 1,
+            "djc": 4
+        }
+    }
+]
