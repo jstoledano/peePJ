@@ -77,7 +77,7 @@ class ARE(models.Model):
     activa = models.BooleanField(default=True)
 
     def __str__(self):
-        return f"{self.seccion.distrito_federal:02d} - {self.are:03d}"
+        return f"{self.seccion.distrito_federal:02d} - {self.zore:03d} - {self.are:03d}"
 
 
 class Seccion(models.Model):
