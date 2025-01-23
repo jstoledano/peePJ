@@ -1,0 +1,17 @@
+[
+    {"model": "gis.distrito_local", "pk": 1, "fields": {"entidad": 29, "distrito_local": 1}},
+    {"model": "gis.distrito_local", "pk": 2, "fields": {"entidad": 29, "distrito_local": 2}},
+    {"model": "gis.distrito_local", "pk": 3, "fields": {"entidad": 29, "distrito_local": 3}},
+    {"model": "gis.distrito_local", "pk": 4, "fields": {"entidad": 29, "distrito_local": 4}},
+    {"model": "gis.distrito_local", "pk": 5, "fields": {"entidad": 29, "distrito_local": 5}},
+    {"model": "gis.distrito_local", "pk": 6, "fields": {"entidad": 29, "distrito_local": 6}},
+    {"model": "gis.distrito_local", "pk": 7, "fields": {"entidad": 29, "distrito_local": 7}},
+    {"model": "gis.distrito_local", "pk": 8, "fields": {"entidad": 29, "distrito_local": 8}},
+    {"model": "gis.distrito_local", "pk": 9, "fields": {"entidad": 29, "distrito_local": 9}},
+    {"model": "gis.distrito_local", "pk": 10, "fields": {"entidad": 29, "distrito_local": 10}},
+    {"model": "gis.distrito_local", "pk": 11, "fields": {"entidad": 29, "distrito_local": 11}},
+    {"model": "gis.distrito_local", "pk": 12, "fields": {"entidad": 29, "distrito_local": 12}},
+    {"model": "gis.distrito_local", "pk": 13, "fields": {"entidad": 29, "distrito_local": 13}},
+    {"model": "gis.distrito_local", "pk": 14, "fields": {"entidad": 29, "distrito_local": 14}},
+    {"model": "gis.distrito_local", "pk": 15, "fields": {"entidad": 29, "distrito_local": 15}}
+]
