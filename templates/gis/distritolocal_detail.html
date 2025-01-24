@@ -1,7 +1,8 @@
 {% extends "base.html" %}
 {% load static %}
+{% load humanize %}
 
-{% block title %}Expediente del distrito {{ distrito.distrito_local|stringformat:"02d" }}{% endblock title %}
+{% block title %}Expediente del distrito local {{ distrito.distrito_local|stringformat:"02d" }}{% endblock title %}
 
 {% block content %}
 <div class="container">
@@ -28,7 +29,7 @@
                             </tr>
                             <tr>
                                 <th>Padrón Electoral</th>
-                                <td>12,456</td>
+                                <td>{{ distrito.get_padron|intcomma }} <small>(Corte: {{ distrito.get_fecha_corte }})</small></td>
                             </tr>
                             <tr>
                                 <th>Lista Nominal</th>
