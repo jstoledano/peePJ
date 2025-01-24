@@ -34,6 +34,12 @@ class DistritoFederal(models.Model):
     def __str__(self):
         return f"{self.entidad.entidad:02d} - {self.distrito_federal:02d}"
 
+    def get_pe(self):
+        return self.seccion_set.aggregate(suma_padron=Sum('padron__pe'))['suma_padron']
+
+    def get_ln(self):
+        return self.seccion_set.aggregate(suma_lista_nominal=Sum('padron__ln'))['suma_lista_nominal']
+
 
 class DistritoLocal(models.Model):
     entidad = models.ForeignKey(Entidad, on_delete=models.CASCADE)
@@ -46,6 +52,12 @@ class DistritoLocal(models.Model):
 
     def __str__(self):
         return f"{self.entidad.entidad:02d} - {self.distrito_local:02d}"
+
+    def get_pe(self):
+        return self.seccion_set.aggregate(suma_padron=Sum('padron__pe'))['suma_padron']
+
+    def get_ln(self):
+        return self.seccion_set.aggregate(suma_lista_nominal=Sum('padron__ln'))['suma_lista_nominal']
 
 
 class DJP(models.Model):
@@ -93,7 +105,7 @@ class Municipio(models.Model):
     def get_pe(self):
         return self.seccion_set.aggregate(suma_padron=Sum('padron__pe'))['suma_padron']
 
-    def get_le(self):
+    def get_ln(self):
         return self.seccion_set.aggregate(suma_lista_nominal=Sum('padron__ln'))['suma_lista_nominal']
 
 
@@ -115,6 +127,12 @@ class ARE(models.Model):
 
     def __str__(self):
         return f"{self.zore.distrito:02d} - {self.zore.zore:03d} - {self.are:03d}"
+
+    def get_pe(self):
+        return self.seccion_set.aggregate(suma_padron=Sum('padron__pe'))['suma_padron']
+
+    def get_ln(self):
+        return self.seccion_set.aggregate(suma_lista_nominal=Sum('padron__ln'))['suma_lista_nominal']
 
 
 class Seccion(models.Model):
@@ -148,4 +166,4 @@ class Padron(models.Model):
         ordering = ['entidad', 'seccion']
 
     def __str__(self):
-        return f"{self.entidad.entidad:02d} - {self.seccion.municipio.municipio:03d} - {self.seccion.seccion:04d} - {self.fecha}"
+        return f"{self.entidad.entidad} {self.seccion.seccion:04d} - Padron: {self.pe} - Lista Nominal: {self.ln}"
