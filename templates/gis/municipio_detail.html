@@ -1,5 +1,6 @@
 {% extends "base.html" %}
 {% load static %}
+{% load humanize %}
 
 {% block title %}Expediente del municipio {{ municipio.municipio|stringformat:"03d" }} {{ municipio.nombre }}{% endblock title %}
 
@@ -32,11 +33,15 @@
                             </tr>
                             <tr>
                                 <th>Padrón Electoral</th>
-                                <td>12,456</td>
+                                <td>{{ municipio.get_padron|intcomma }}</td>
                             </tr>
                             <tr>
                                 <th>Lista Nominal</th>
-                                <td>12,345</td>
+                                <td>{{ municipio.get_lista_nominal|intcomma }}</td>
+                            </tr>
+                            <tr>
+                                <th>Fecha de Corte</th>
+                                <td>{{ municipio.get_fecha_corte }}</td>
                             </tr>
                         </tbody>
                     </table>

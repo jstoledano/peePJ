@@ -7,6 +7,7 @@ from gis.models import (
     DJC,
     Municipio,
     Seccion,
+    ZORE,HistoricoPE
 )
 
 
@@ -17,3 +18,4 @@ admin.site.register(DJP)
 admin.site.register(DJC)
 admin.site.register(Municipio)
 admin.site.register(Seccion)
+admin.site.register(HistoricoPE)

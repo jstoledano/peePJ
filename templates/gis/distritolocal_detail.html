@@ -1,0 +1,68 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Expediente del distrito {{ distrito.distrito_local|stringformat:"02d" }}{% endblock title %}
+
+{% block content %}
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <h1>Expediente del distrito local {{ distrito.distrito_local|stringformat:"02d" }} {{ municipio.nombre }}</h1>
+        </div>
+    </div>
+    <div class="row"><!-- datos -->
+        <div class="col-md-6 col-sm-12">
+            <div id="map">
+                <img src="{% static 'img/466.png' %}" class="w-100" alt="Municipio {{ municipio.municipio|stringformat:"03d" }} {{ municipio.nombre }}" />
+            </div>
+        </div>
+        <div class="col-md-6 col-sm-12">
+            <div class="row">
+                <div class="col">
+                    <h2>Información general</h2>
+                    <table class="table table-striped">
+                        <tbody>
+                            <tr>
+                                <th>Secciones</th>
+                                <td>{{ distrito.seccion_set.count }} secciones</td>
+                            </tr>
+                            <tr>
+                                <th>Padrón Electoral</th>
+                                <td>12,456</td>
+                            </tr>
+                            <tr>
+                                <th>Lista Nominal</th>
+                                <td>12,345</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div><!-- ./datos -->
+
+    <div class="row"><!-- secciones -->
+        <h2>Secciones</h2>
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Municipio</th>
+                    <th>Secciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for municipio, secciones in secciones_por_municipio.items %}
+                    <tr>
+                        <td>{{ municipio.nombre }}</td>
+                        <td>
+                            {% for seccion in secciones %}
+                                <a href="{% url 'seccion_detail' entidad=seccion.entidad.entidad seccion=seccion.seccion %}" class="m-2">{{ seccion.seccion|stringformat:"04d" }}</a>
+                            {% endfor %}
+                        </td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div><!-- ./secciones -->
+</div>
+{% endblock content %}
