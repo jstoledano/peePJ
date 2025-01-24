@@ -1,0 +1,63 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Expediente del municipio {{ municipio.municipio|stringformat:"03d" }} {{ municipio.nombre }}{% endblock title %}
+
+{% block content %}
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <h1>Expediente del municipio {{ municipio.municipio|stringformat:"03d" }} {{ municipio.nombre }}</h1>
+        </div>
+    </div>
+    <div class="row"><!-- datos -->
+        <div class="col-md-6 col-sm-12">
+            <div id="map">
+                <img src="{% static 'img/466.png' %}" class="w-100" alt="Municipio {{ municipio.municipio|stringformat:"03d" }} {{ municipio.nombre }}" />
+            </div>
+        </div>
+        <div class="col-md-6 col-sm-12">
+            <div class="row">
+                <div class="col">
+                    <h2>Información general</h2>
+                    <table class="table table-striped">
+                        <tbody>
+                            <tr>
+                                <th>Municipio</th>
+                                <td>{{ municipio.municipio|stringformat:"03d" }}</td>
+                            </tr>
+                            <tr>
+                                <th>Nombre</th>
+                                <td>{{ municipio.nombre }}</td>
+                            </tr>
+                            <tr>
+                                <th>Padrón Electoral</th>
+                                <td>12,456</td>
+                            </tr>
+                            <tr>
+                                <th>Lista Nominal</th>
+                                <td>12,345</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <p class="h4">Distrito Judicial Penal: {{ municipio.djp.nombre }}</p>
+                    <p class="h4">Distrito Judicial Civil: {{ municipio.djc.nombre }}</p>
+                </div>
+            </div>
+        </div>
+    </div><!-- ./datos -->
+
+    <div class="row"><!-- secciones -->
+        <h2>Secciones</h2>
+        <div class="d-flex flex-wrap">
+            {% for seccion in municipio.seccion_set.all %}
+                <a href="{% url 'seccion_detail' entidad=municipio.entidad.id seccion=seccion.seccion %}" class="btn btn-primary m-2">{{ seccion.seccion|stringformat:"04d" }}</a>
+            {% endfor %}
+        </div>
+    </div><!-- ./secciones -->
+</div>
+{% endblock content %}

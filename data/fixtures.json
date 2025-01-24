@@ -68,7 +68,7 @@
     "pk": 9,
     "fields": {
         "entidad": 9,
-        "nombre": "Ciudad de México"
+        "nombre": "Ciudad de M?ico"
     }
 },
 {
@@ -116,7 +116,7 @@
     "pk": 15,
     "fields": {
         "entidad": 15,
-        "nombre": "México"
+        "nombre": "M?ico"
     }
 },
 {
@@ -124,7 +124,7 @@
     "pk": 16,
     "fields": {
         "entidad": 16,
-        "nombre": "Michoacán"
+        "nombre": "Michoac?"
     }
 },
 {
@@ -148,7 +148,7 @@
     "pk": 19,
     "fields": {
         "entidad": 19,
-        "nombre": "Nuevo León"
+        "nombre": "Nuevo Le?"
     }
 },
 {
@@ -172,7 +172,7 @@
     "pk": 22,
     "fields": {
         "entidad": 22,
-        "nombre": "Querétaro"
+        "nombre": "Quer?aro"
     }
 },
 {
@@ -188,7 +188,7 @@
     "pk": 24,
     "fields": {
         "entidad": 24,
-        "nombre": "San Luis Potosí"
+        "nombre": "San Luis Potos?"
     }
 },
 {
@@ -244,7 +244,7 @@
     "pk": 31,
     "fields": {
         "entidad": 31,
-        "nombre": "Yucatán"
+        "nombre": "Yucat?"
     }
 },
 {
@@ -587,7 +587,7 @@
     "fields": {
         "entidad": 29,
         "municipio": 11,
-        "nombre": "MUÑOZ DE DOMINGO ARENAS",
+        "nombre": "MU?Z DE DOMINGO ARENAS",
         "djp": 1,
         "djc": 3
     }
@@ -598,7 +598,7 @@
     "fields": {
         "entidad": 29,
         "municipio": 12,
-        "nombre": "ESPAÑITA",
+        "nombre": "ESPA?TA",
         "djp": 1,
         "djc": 4
     }
