@@ -34,8 +34,8 @@
                 <div class="col">
                   <h1>Expediente de la Sección {{ seccion.seccion|stringformat:"04d" }}</h1>
                    <div class="row">
-                      <div class="col"><p>Padrón Electoral: {{ seccion.padron_set.all.0.pe|intcomma }}</p></div>
-                      <div class="col"><p>Lista Nominal: {{ seccion.padron_set.all.0.ln|intcomma }}</p></div>
+                      <div class="col"><p>Padrón Electoral: {{ seccion.pe|intcomma }}</p></div>
+                      <div class="col"><p>Lista Nominal: {{ seccion.ln|intcomma }}</p></div>
                    </div>
                     <p class="h2">
                         Municipio:

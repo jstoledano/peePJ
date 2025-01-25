@@ -29,11 +29,11 @@
                             </tr>
                             <tr>
                                 <th>Padrón Electoral</th>
-                                <td>{{ distrito.get_padron|intcomma }} <small>(Corte: {{ distrito.get_fecha_corte }})</small></td>
+                                <td>{{ distrito.get_pe|intcomma }}</td>
                             </tr>
                             <tr>
                                 <th>Lista Nominal</th>
-                                <td>12,345</td>
+                                <td>{{ distrito.get_ln|intcomma }}</td>
                             </tr>
                         </tbody>
                     </table>

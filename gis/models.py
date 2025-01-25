@@ -1,4 +1,3 @@
-from django.utils import timezone
 from django.db import models
 from django.db.models import Sum
 
@@ -8,6 +7,17 @@ TIPO_SECCION = (
     (3, 'MIXTA'),
     (4, 'RURAL')
 )
+
+
+class BaseSeccion(models.Model):
+    class Meta:
+        abstract = True
+
+    def get_pe(self):
+        return self.seccion_set.aggregate(suma_pe=Sum('pe'))['suma_pe']
+
+    def get_ln(self):
+        return self.seccion_set.aggregate(suma_ln=Sum('ln'))['suma_ln']
 
 
 class Entidad(models.Model):
@@ -22,7 +32,7 @@ class Entidad(models.Model):
         return f"{self.entidad:02d} - {self.nombre.upper()}"
 
 
-class DistritoFederal(models.Model):
+class DistritoFederal(BaseSeccion):
     entidad = models.ForeignKey(Entidad, on_delete=models.CASCADE)
     distrito_federal = models.PositiveSmallIntegerField("Distrito")
 
@@ -34,14 +44,8 @@ class DistritoFederal(models.Model):
     def __str__(self):
         return f"{self.entidad.entidad:02d} - {self.distrito_federal:02d}"
 
-    def get_pe(self):
-        return self.seccion_set.aggregate(suma_padron=Sum('padron__pe'))['suma_padron']
 
-    def get_ln(self):
-        return self.seccion_set.aggregate(suma_lista_nominal=Sum('padron__ln'))['suma_lista_nominal']
-
-
-class DistritoLocal(models.Model):
+class DistritoLocal(BaseSeccion):
     entidad = models.ForeignKey(Entidad, on_delete=models.CASCADE)
     distrito_local = models.PositiveSmallIntegerField()
 
@@ -52,12 +56,6 @@ class DistritoLocal(models.Model):
 
     def __str__(self):
         return f"{self.entidad.entidad:02d} - {self.distrito_local:02d}"
-
-    def get_pe(self):
-        return self.seccion_set.aggregate(suma_padron=Sum('padron__pe'))['suma_padron']
-
-    def get_ln(self):
-        return self.seccion_set.aggregate(suma_lista_nominal=Sum('padron__ln'))['suma_lista_nominal']
 
 
 class DJP(models.Model):
@@ -88,7 +86,7 @@ class DJC(models.Model):
         return f"{self.nombre}"
 
 
-class Municipio(models.Model):
+class Municipio(BaseSeccion):
     entidad = models.ForeignKey(Entidad, on_delete=models.CASCADE)
     municipio = models.PositiveSmallIntegerField()
     nombre = models.CharField(max_length=100)
@@ -102,12 +100,6 @@ class Municipio(models.Model):
     def __str__(self):
         return f"{self.entidad.entidad:02d} - {self.municipio:03d} - {self.nombre.upper()}"
 
-    def get_pe(self):
-        return self.seccion_set.aggregate(suma_padron=Sum('padron__pe'))['suma_padron']
-
-    def get_ln(self):
-        return self.seccion_set.aggregate(suma_lista_nominal=Sum('padron__ln'))['suma_lista_nominal']
-
 
 class ZORE(models.Model):
     entidad = models.ForeignKey(Entidad, on_delete=models.CASCADE)
@@ -119,7 +111,7 @@ class ZORE(models.Model):
         return f"{self.distrito.distrito_federal} - {self.zore:03d}"
 
 
-class ARE(models.Model):
+class ARE(BaseSeccion):
     entidad = models.ForeignKey(Entidad, on_delete=models.CASCADE)
     zore = models.ForeignKey(ZORE, on_delete=models.CASCADE)
     are = models.PositiveSmallIntegerField()
@@ -127,12 +119,6 @@ class ARE(models.Model):
 
     def __str__(self):
         return f"{self.zore.distrito:02d} - {self.zore.zore:03d} - {self.are:03d}"
-
-    def get_pe(self):
-        return self.seccion_set.aggregate(suma_padron=Sum('padron__pe'))['suma_padron']
-
-    def get_ln(self):
-        return self.seccion_set.aggregate(suma_lista_nominal=Sum('padron__ln'))['suma_lista_nominal']
 
 
 class Seccion(models.Model):
@@ -143,6 +129,8 @@ class Seccion(models.Model):
     are = models.ForeignKey(ARE, on_delete=models.CASCADE, null=True, blank=True)
     seccion = models.PositiveSmallIntegerField()
     tipo = models.PositiveSmallIntegerField(choices=TIPO_SECCION)
+    pe = models.PositiveIntegerField("PE", null=True, blank=True)
+    ln = models.PositiveIntegerField("LN", null=True, blank=True)
     activa = models.BooleanField(default=True)
 
     class Meta:
@@ -152,18 +140,3 @@ class Seccion(models.Model):
 
     def __str__(self):
         return f"{self.entidad.entidad:02d} - {self.municipio.municipio:03d} - {self.seccion:04d}"
-
-
-class Padron(models.Model):
-    entidad = models.ForeignKey(Entidad, on_delete=models.CASCADE)
-    seccion = models.ForeignKey(Seccion, on_delete=models.CASCADE)
-    pe = models.PositiveIntegerField("PE")
-    ln = models.PositiveIntegerField("LN")
-
-    class Meta:
-        verbose_name = "PE y LN"
-        verbose_name_plural = "PE y LN"
-        ordering = ['entidad', 'seccion']
-
-    def __str__(self):
-        return f"{self.entidad.entidad} {self.seccion.seccion:04d} - Padron: {self.pe} - Lista Nominal: {self.ln}"

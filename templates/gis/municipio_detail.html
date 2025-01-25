@@ -32,6 +32,9 @@
                                 <td>{{ municipio.nombre }}</td>
                             </tr>
                             <tr>
+                                <th>Secciones</th>
+                                <td>{{ municipio.seccion_set.count }} secciones</td>
+                            <tr>
                                 <th>Padrón Electoral</th>
                                 <td>{{ municipio.get_pe|intcomma }}</td>
                             </tr>

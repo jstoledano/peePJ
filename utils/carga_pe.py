@@ -21,19 +21,14 @@ def cargar_datos_csv(file_path):
             entidad = Entidad.objects.get(entidad=int(row['entidad']))
             try:
                 seccion = Seccion.objects.get(entidad=entidad, seccion=int(row['seccion']))
+                seccion.pe = int(row['pe'])
+                seccion.ln = int(row['ln'])
+                seccion.save()
+                # print(f"Updated Seccion {seccion.entidad.entidad}-{seccion.seccion} with PE: {seccion.pe}, LN: {seccion.ln}")
             except Seccion.DoesNotExist:
-                print(f"Seccion with entidad {entidad} and seccion {row['seccion']} does not exist. Skipping row.")
+                print(f"Seccion {row['entidad']}-{row['seccion']} does not exist")
                 continue
-
-            pe = int(row['pe'])
-            ln = int(row['ln'])
-
-            Padron.objects.create(
-                entidad=entidad,
-                seccion=seccion,
-                pe=pe,
-                ln=ln
-            )
+        print(f"Finished loading data from {file_path}")
 
 if __name__ == "__main__":
     file_paths = ['./data/20250115-pe_ln.csv']

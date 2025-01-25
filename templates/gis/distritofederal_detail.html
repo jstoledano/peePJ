@@ -1,5 +1,6 @@
 {% extends "base.html" %}
 {% load static %}
+{% load humanize %}
 
 {% block title %}Expediente del distrito {{ distrito.distrito_federal|stringformat:"02d" }}{% endblock title %}
 
@@ -28,11 +29,11 @@
                             </tr>
                             <tr>
                                 <th>Padrón Electoral</th>
-                                <td>12,456</td>
+                                <td>{{ distrito.get_pe|intcomma }}</td>
                             </tr>
                             <tr>
                                 <th>Lista Nominal</th>
-                                <td>12,345</td>
+                                <td>{{ distrito.get_ln|intcomma }}</td>
                             </tr>
                         </tbody>
                     </table>
@@ -53,10 +54,10 @@
             <tbody>
                 {% for municipio, secciones in secciones_por_municipio.items %}
                     <tr>
-                        <td>{{ municipio.nombre }}</td>
+                        <td><a hrf="{% url 'municipio_detail' entidad=municipio.entidad.entidad municipio=municipio.municipio%}">{{ municipio.nombre }}</a></td>
                         <td>
                             {% for seccion in secciones %}
-                                <a href="{% url 'seccion_detail' entidad=municipio.entidad.id seccion=seccion.seccion %}" class="m-2">{{ seccion.seccion|stringformat:"04d" }}</a>
+                                <a href="{% url 'seccion_detail' entidad=municipio.entidad.entidad seccion=seccion.seccion %}" class="m-2">{{ seccion.seccion|stringformat:"04d" }}</a>
                             {% endfor %}
                         </td>
                     </tr>
