@@ -54,7 +54,7 @@
             <tbody>
                 {% for municipio, secciones in secciones_por_municipio.items %}
                     <tr>
-                        <td><a hrf="{% url 'municipio_detail' entidad=municipio.entidad.entidad municipio=municipio.municipio%}">{{ municipio.nombre }}</a></td>
+                        <td><a href="{% url 'municipio_detail' entidad=municipio.entidad.entidad municipio=municipio.municipio%}">{{ municipio.nombre }}</a></td>
                         <td>
                             {% for seccion in secciones %}
                                 <a href="{% url 'seccion_detail' entidad=municipio.entidad.entidad seccion=seccion.seccion %}" class="m-2">{{ seccion.seccion|stringformat:"04d" }}</a>
