@@ -48,7 +48,8 @@
             </div>
             <div class="row">
                 <div class="col">
-                    <p class="h4">Distrito Judicial Penal: {{ municipio.djp.nombre }}</p>
+                    <p class="h4">Distrito Judicial Penal: <a href="{% url 'djp_detail' entidad=municipio.entidad.entidad djp=municipio.djp.djp %}">
+                        {{ municipio.djp.nombre }}</a></p>
                     <p class="h4">Distrito Judicial Civil: {{ municipio.djc.nombre }}</p>
                 </div>
             </div>

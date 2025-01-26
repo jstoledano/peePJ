@@ -71,6 +71,15 @@ class DJP(models.Model):
     def __str__(self):
         return f"{self.nombre}"
 
+    def get_secciones(self):
+        return Seccion.objects.filter(municipio__djp=self).count()
+
+    def get_pe(self):
+        return Seccion.objects.filter(municipio__djp=self).aggregate(suma_pe=Sum('pe'))['suma_pe']
+
+    def get_ln(self):
+        return Seccion.objects.filter(municipio__djp=self).aggregate(suma_ln=Sum('ln'))['suma_ln']
+
 
 class DJC(models.Model):
     entidad = models.ForeignKey(Entidad, on_delete=models.CASCADE)
@@ -84,6 +93,15 @@ class DJC(models.Model):
 
     def __str__(self):
         return f"{self.nombre}"
+
+    def get_secciones(self):
+        return Seccion.objects.filter(municipio__djc=self).count()
+
+    def get_pe(self):
+        return Seccion.objects.filter(municipio__djc=self).aggregate(suma_pe=Sum('pe'))['suma_pe']
+
+    def get_ln(self):
+        return Seccion.objects.filter(municipio__djc=self).aggregate(suma_ln=Sum('ln'))['suma_ln']
 
 
 class Municipio(BaseSeccion):

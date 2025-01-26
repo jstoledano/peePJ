@@ -51,7 +51,11 @@
                             {{ seccion.distrito_local.distrito_local|stringformat:"02d" }}</a>
                         </p>
                     <hr class="border-2 mx-4">
-                    <p class="h3">Distrito Judicial Penal: {{ seccion.municipio.djp.nombre }}</p>
+                    <p class="h3">
+                        Distrito Judicial Penal:
+                        <a href="{% url 'djp_detail' entidad=seccion.entidad.entidad djp=seccion.municipio.djp.djp %}">
+                            {{ seccion.municipio.djp.nombre }}</a>
+                    </p>
                     <p class="h4">Distrito Judicial Civil: {{ seccion.municipio.djc.nombre }}</p>
                     <div class="row">
                         <div class="col"><p>ZORE: {{ seccion.are.zore }}</p></div>

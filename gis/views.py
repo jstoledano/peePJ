@@ -3,7 +3,8 @@ from .models import (
     Seccion,
     Municipio,
     DistritoFederal,
-    DistritoLocal
+    DistritoLocal,
+    DJP
 )
 
 
@@ -71,3 +72,11 @@ class DistritoLocalDetailView(DetailView):
         return context
 
 
+class DJPDetailView(DetailView):
+    model = DJP
+    context_object_name = 'djp'
+
+    def get_object(self):
+        entidad = self.kwargs.get("entidad")
+        djp = self.kwargs.get("djp")
+        return DJP.objects.get(entidad__entidad=entidad, djp=djp)
