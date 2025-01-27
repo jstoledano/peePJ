@@ -33,33 +33,63 @@
                 </div>
                 <div class="col">
                   <h1>Expediente de la Sección {{ seccion.seccion|stringformat:"04d" }}</h1>
-                   <div class="row">
-                      <div class="col"><p>Padrón Electoral: {{ seccion.pe|intcomma }}</p></div>
-                      <div class="col"><p>Lista Nominal: {{ seccion.ln|intcomma }}</p></div>
-                   </div>
-                    <p class="h2">
-                        Municipio:
-                        <a href="{% url 'municipio_detail' entidad=seccion.entidad.entidad municipio=seccion.municipio.municipio %}">
-                            {{ seccion.municipio.municipio }} {{ seccion.municipio.nombre }}</a>
-                    </p>
-                    <p class="h3">Distrito Electoral:
-                        <a href="{% url 'distrito_detail' entidad=seccion.entidad.entidad distrito=seccion.distrito_federal.distrito_federal %}">
-                            {{ seccion.distrito_federal.distrito_federal|stringformat:"02d" }}</a>
-                    </p>
-                    <p class="h3">Distrito Local:
-                        <a href="{% url 'distrito_local_detail' entidad=seccion.entidad.entidad distrito=seccion.distrito_local.distrito_local %}">
-                            {{ seccion.distrito_local.distrito_local|stringformat:"02d" }}</a>
-                        </p>
-                    <hr class="border-2 mx-4">
-                    <p class="h3">
-                        Distrito Judicial Penal:
-                        <a href="{% url 'djp_detail' entidad=seccion.entidad.entidad djp=seccion.municipio.djp.djp %}">
-                            {{ seccion.municipio.djp.nombre }}</a>
-                    </p>
-                    <p class="h4">Distrito Judicial Civil: {{ seccion.municipio.djc.nombre }}</p>
                     <div class="row">
-                        <div class="col"><p>ZORE: {{ seccion.are.zore }}</p></div>
-                        <div class="col"><p>ARE: {{ seccion.are.are }}</p></div>
+                        <div class="row">
+                            <div class="col-sm-4">
+                                <strong>Padrón Electoral</strong>
+                            </div>
+                            <div class="col">
+                                {{ seccion.pe|intcomma }}
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-4">
+                                <strong>Lista Nominal</strong>
+                            </div>
+                            <div class="col">
+                                {{ seccion.ln|intcomma }}
+                            </div>
+                        </div>
+                        <div class="row"><!-- Municipio -->
+                            <div class="col-sm-4"><strong>Municipio</strong></div>
+                            <div class="col">
+                                <a href="{% url 'municipio_detail' entidad=seccion.entidad.entidad municipio=seccion.municipio.municipio %}">
+                                    {{ seccion.municipio.municipio }} {{ seccion.municipio.nombre }}
+                                </a>
+                            </div>
+                        </div>
+                        <div class="row"><!-- Distrito Federal -->
+                            <div class="col-sm-4"><strong>Distrito Electoral</strong></div>
+                            <div class="col">
+                                <a href="{% url 'distrito_detail' entidad=seccion.entidad.entidad distrito=seccion.distrito_federal.distrito_federal %}">
+                                    {{ seccion.distrito_federal.distrito_federal|stringformat:"02d" }}
+                                </a>
+                            </div>
+                        </div>
+                        <div class="row"><!-- Distrito Local -->
+                            <div class="col-sm-4"><strong>Distrito Local</strong></div>
+                            <div class="col">
+                                <a href="{% url 'distrito_local_detail' entidad=seccion.entidad.entidad distrito=seccion.distrito_local.distrito_local %}">
+                                    {{ seccion.distrito_local.distrito_local|stringformat:"02d" }}
+                                </a>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-4"><strong>Distrito Judicial Penal</strong></div>
+                            <div class="col">
+                                <a href="{% url 'djp_detail' entidad=seccion.entidad.entidad djp=seccion.municipio.djp.djp %}">
+                                    {{ seccion.municipio.djp.nombre }}
+                                </a>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-4"><strong>Distrito Judicial Civil</strong></div>
+                            <div class="col">
+                                <a href="{% url 'djc_detail' entidad=seccion.entidad.entidad djc=seccion.municipio.djc.djc %}">
+                                    {{ seccion.municipio.djc.nombre }}
+                                </a>
+                            </div>
+                        </div>
                     </div>
                 </div>
               </div><!-- ./MGE -->

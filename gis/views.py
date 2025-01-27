@@ -4,7 +4,8 @@ from .models import (
     Municipio,
     DistritoFederal,
     DistritoLocal,
-    DJP
+    DJP,
+    DJC
 )
 
 
@@ -80,3 +81,37 @@ class DJPDetailView(DetailView):
         entidad = self.kwargs.get("entidad")
         djp = self.kwargs.get("djp")
         return DJP.objects.get(entidad__entidad=entidad, djp=djp)
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        secciones = Seccion.objects.filter(municipio__djp=self.get_object())
+        secciones_por_municipio = {}
+        for seccion in secciones:
+            municipio = seccion.municipio
+            if municipio not in secciones_por_municipio:
+                secciones_por_municipio[municipio] = []
+            secciones_por_municipio[municipio].append(seccion)
+        context['secciones_por_municipio'] = secciones_por_municipio
+        return context
+
+
+class DJCDetailView(DetailView):
+    model = DJC
+    context_object_name = 'djc'
+
+    def get_object(self):
+        entidad = self.kwargs.get("entidad")
+        djc = self.kwargs.get("djc")
+        return DJC.objects.get(entidad__entidad=entidad, djc=djc)
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        secciones = Seccion.objects.filter(municipio__djc=self.get_object())
+        secciones_por_municipio = {}
+        for seccion in secciones:
+            municipio = seccion.municipio
+            if municipio not in secciones_por_municipio:
+                secciones_por_municipio[municipio] = []
+            secciones_por_municipio[municipio].append(seccion)
+        context['secciones_por_municipio'] = secciones_por_municipio
+        return context

@@ -42,15 +42,16 @@
                                 <th>Lista Nominal</th>
                                 <td>{{ municipio.get_ln|intcomma }}</td>
                             </tr>
+                            <tr>
+                                <th>Distrito Judicial Penal</th>
+                                <td><a href="{% url 'djp_detail' entidad=municipio.entidad.entidad djp=municipio.djp.djp %}">{{ municipio.djp.nombre }}</a></td>
+                            </tr>
+                            <tr>
+                                <th>Distrito Judicial Civil</th>
+                                <td><a href="{% url 'djc_detail' entidad=municipio.entidad.entidad djc=municipio.djc.djc %}">{{ municipio.djc.nombre }}</a></td>
+                            </tr>
                         </tbody>
                     </table>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col">
-                    <p class="h4">Distrito Judicial Penal: <a href="{% url 'djp_detail' entidad=municipio.entidad.entidad djp=municipio.djp.djp %}">
-                        {{ municipio.djp.nombre }}</a></p>
-                    <p class="h4">Distrito Judicial Civil: {{ municipio.djc.nombre }}</p>
                 </div>
             </div>
         </div>

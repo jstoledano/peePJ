@@ -2,13 +2,13 @@
 {% load static %}
 {% load humanize %}
 
-{% block title %}Expediente del distrito judicial penal {{ djp.nombre }}{% endblock title %}
+{% block title %}Expediente del distrito judicial en materia civil {{ djc.nombre }}{% endblock title %}
 
 {% block content %}
 <div class="container">
     <div class="row">
         <div class="col-md-12">
-            <h1>Expediente del distrito judicial penal {{ djp.nombre }}</h1>
+            <h1>Expediente del distrito judicial en materia civil {{ djc.nombre }}</h1>
         </div>
     </div>
     <div class="row"><!-- datos -->
@@ -24,20 +24,20 @@
                     <table class="table table-striped">
                         <tbody>
                             <tr>
-                                <th>Secciones</th>
-                                <td>{{ djp.get_secciones }} secciones</td>
+                                <th>Municipios</th>
+                                <td>{{ djc.municipio_set.count }} municipios</td>
                             </tr>
                             <tr>
-                                <th>Municipios</th>
-                                <td>{{ djp.municipio_set.count }} municipios</td>
+                                <th>Secciones</th>
+                                <td>{{ djc.get_secciones }} secciones</td>
                             </tr>
                             <tr>
                                 <th>Padrón Electoral</th>
-                                <td>{{ djp.get_pe|intcomma }}</td>
+                                <td>{{ djc.get_pe|intcomma }}</td>
                             </tr>
                             <tr>
                                 <th>Lista Nominal</th>
-                                <td>{{ djp.get_ln|intcomma }}</td>
+                                <td>{{ djc.get_ln|intcomma }}</td>
                             </tr>
                         </tbody>
                     </table>
@@ -58,7 +58,11 @@
             <tbody>
                 {% for municipio, secciones in secciones_por_municipio.items %}
                     <tr>
-                        <td>{{ municipio.nombre }}</td>
+                        <td>
+                            <a href="{% url "municipio_detail" entidad=municipio.entidad.entidad municipio=municipio.municipio %}" class="m-2">
+                                {{ municipio.nombre }}
+                            </a>
+                        </td>
                         <td>
                             {% for seccion in secciones %}
                                 <a href="{% url 'seccion_detail' entidad=seccion.entidad.entidad seccion=seccion.seccion %}" class="m-2">{{ seccion.seccion|stringformat:"04d" }}</a>

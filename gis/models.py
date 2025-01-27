@@ -158,3 +158,5 @@ class Seccion(models.Model):
 
     def __str__(self):
         return f"{self.entidad.entidad:02d} - {self.municipio.municipio:03d} - {self.seccion:04d}"
+
+
