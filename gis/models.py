@@ -20,7 +20,7 @@ class BaseSeccion(models.Model):
         return self.seccion_set.aggregate(suma_ln=Sum('ln'))['suma_ln']
 
 
-class Entidad(models.Model):
+class Entidad(BaseSeccion):
     entidad = models.PositiveSmallIntegerField()
     nombre = models.CharField(max_length=100)
 
@@ -158,5 +158,15 @@ class Seccion(models.Model):
 
     def __str__(self):
         return f"{self.entidad.entidad:02d} - {self.municipio.municipio:03d} - {self.seccion:04d}"
+
+
+AMBITO = [
+    (1, 'NACIONAL'),
+    (2, 'CIRCUNSCRIPCION'),
+    (3, 'DISTRITO JUDICIAL'),
+    (4, 'ESTATAL'),
+    (5, 'JUDICIAL PENAL'),
+    (6, 'JUDICIAL CIVIL'),
+]
 
 

@@ -1,5 +1,6 @@
-from django.views.generic import DetailView
+from django.views.generic import DetailView, TemplateView
 from .models import (
+    Entidad,
     Seccion,
     Municipio,
     DistritoFederal,
@@ -7,6 +8,15 @@ from .models import (
     DJP,
     DJC
 )
+
+
+class IndexView(DetailView):
+    model = Entidad
+    template_name = 'gis/index.html'
+    context_object_name = 'ent'
+
+    def get_object(self):
+        return Entidad.objects.get(entidad=29)
 
 
 class SeccionDetailView(DetailView):

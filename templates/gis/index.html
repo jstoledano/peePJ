@@ -1,0 +1,317 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load humanize %}
+
+{% block title %}Sistema de Información Geográfica PEE PJF{% endblock title %}
+
+{% block content %}
+    <div class="my-5 rounded">
+      <div class="p-5 text-center bg-body-tertiary rounded">
+        <div class="container py-5">
+            <img class="d-block mx-auto" src="{% static 'img/logo.png' %}" alt="" />
+            <h1 class="text-body-emphasis">Junta Local Ejecutiva en Tlaxcala</h1>
+            <h2 class="tex-body-emphasis">Registro Federal de Electores</h2>
+          <p class="col-lg-8 mx-auto lead">
+              Sistema de Información Geográfica para el Proceso Electoral Extraordinario 2024-2025 <br />
+              para la elección de Personas Juzgadoras
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+        <div class="row mb-4 border border-primary rounded py-4 my-3">
+            <div class="row">
+                <div class="row"><!-- MGE -->
+                    <div class="col">
+                        <h2 class="text-center">Marco Geográfico Electoral</h2>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col" id="card-estatal">
+                        <div class="card col">
+                          <div class="card-header">
+                              {{ ent }}
+                          </div>
+                          <div class="card-body">
+                            <table class="table table-striped table-rounded">
+                                <tr>
+                                    <th>Padrón Electoral</th>
+                                    <td>{{ ent.get_pe | intcomma }}</td>
+                                </tr>
+                                <tr>
+                                    <th>Lista Nominal</th>
+                                    <td>{{ ent.get_ln | intcomma }}</td>
+                                </tr>
+                                <tr>
+                                    <th>Secciones</th>
+                                    <td>{{ ent.seccion_set.count | intcomma }}</td>
+                                </tr>
+                                <tr>
+                                    <th>Municipios</th>
+                                    <td>{{ ent.municipio_set.count | intcomma }}</td>
+                                </tr>
+                            </table>
+                          </div>
+                        </div>
+                    </div>
+                    <div class="col" id="card-distrito">
+                        <div class="card col">
+                            <div class="card-header">
+                                Distritos Electorales
+                            </div>
+                            <div class="card-body">
+                                <table class="table table-striped table-rounded">
+                                    <thead>
+                                        <tr>
+                                            <th>Distrito</th>
+                                            <th>Secciones</th>
+                                            <th>P.E.</th>
+                                            <th>L.N.</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        {% for distrito in ent.distritofederal_set.all %}
+                                            <tr>
+                                                <td><a href="{% url 'distrito_detail' entidad=ent.entidad distrito=distrito.distrito_federal %}">{{ distrito }}</a></td>
+                                                <td>{{ distrito.seccion_set.count | intcomma }}</td>
+                                                <td>{{ distrito.get_pe | intcomma }}</td>
+                                                <td>{{ distrito.get_ln | intcomma }}</td>
+                                            </tr>
+                                        {% endfor %}
+                                    </tbody>
+                                </table>
+                        </div>
+                    </div>
+                    </div>
+
+                </div>
+
+                <div class="row py-2">
+                    <div class="col" id="card-dl">
+                        <div class="card col">
+                            <div class="card-header">
+                                Distritos Locales
+                            </div>
+                            <div class="card-body">
+                                <table class="table table-striped table-rounded">
+                                    <thead>
+                                        <tr>
+                                            <th>Distrito</th>
+                                            <th>Secciones</th>
+                                            <th>P.E.</th>
+                                            <th>L.N.</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        {% for distrito in ent.distritolocal_set.all %}
+                                            <tr>
+                                                <td><a href="{% url 'distrito_local_detail' entidad=ent.entidad distrito=distrito.distrito_local %}">{{ distrito }}</a></td>
+                                                <td>{{ distrito.seccion_set.count | intcomma }}</td>
+                                                <td>{{ distrito.get_pe | intcomma }}</td>
+                                                <td>{{ distrito.get_ln | intcomma }}</td>
+                                            </tr>
+                                        {% endfor %}
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col" id="card-djc">
+
+
+                    <div class="col" id="card-djp">
+                        <div class="card col">
+                            <div class="card-header">
+                                Distritos Judiciales Penales
+                            </div>
+                            <div class="card-body">
+                                <table class="table table-striped table-rounded">
+                                    <thead>
+                                        <tr>
+                                            <th>DJP</th>
+                                            <th>Secciones</th>
+                                            <th>P.E.</th>
+                                            <th>L.N.</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        {% for djp in ent.djp_set.all %}
+                                            <tr>
+                                                <td><a href="{% url 'djp_detail' entidad=ent.entidad djp=djp.djp %}">{{ djp }}</a></td>
+                                                <td>{{ djp.get_secciones | intcomma }}</td>
+                                                <td>{{ djp.get_pe | intcomma }}</td>
+                                                <td>{{ djp.get_ln | intcomma }}</td>
+                                            </tr>
+                                        {% endfor %}
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+
+
+                        <div class="card col">
+                            <div class="card-header">
+                                Distritos Judiciales Civiles
+                            </div>
+                            <div class="card-body">
+                                <table class="table table-striped table-rounded">
+                                    <thead>
+                                        <tr>
+                                            <th>DJC</th>
+                                            <th>Secciones</th>
+                                            <th>P.E.</th>
+                                            <th>L.N.</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        {% for djc in ent.djc_set.all %}
+                                            <tr>
+                                                <td><a href="{% url 'djc_detail' entidad=ent.entidad djc=djc.djc %}">{{ djc }}</a></td>
+                                                <td>{{ djc.get_secciones | intcomma }}</td>
+                                                <td>{{ djc.get_pe | intcomma }}</td>
+                                                <td>{{ djc.get_ln | intcomma }}</td>
+                                            </tr>
+                                        {% endfor %}
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col mb-4 border border-primary rounded py-4 me-1">
+                <h2 class="text-center">Cargos Federales</h2>
+
+                <table class="table table-rounded table-bordered">
+                    <thead>
+                        <tr>
+                            <th>Órgano</th>
+                            <th>Cargo</th>
+                            <th>Puestos</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="scjn">
+                            <td>SCJN</td>
+                            <td>Ministra o Ministro</td>
+                            <td class="text-center">9</td>
+                        </tr>
+
+                        <tr class="tdj">
+                            <td>Tribunal de Disciplina Judicial</td>
+                            <td>Magistrada o Magistrado</td>
+                            <td class="text-center">5</td>
+                        </tr>
+
+                        <tr class="ss-tepjf">
+                            <td>Sala Superior del TEPJF</td>
+                            <td>Magistrada o Magistrado</td>
+                            <td class="text-center">2</td>
+                        </tr>
+
+                        <tr class="sr-tepjf">
+                            <td>Sala Regional del TEPJF</td>
+                            <td>Magistrada o Magistrado</td>
+                            <td class="text-center">3</td>
+                        </tr>
+
+                        <tr class="tcd">
+                            <td>Tribunal Colegiado de Circuito</td>
+                            <td>Magistrada o Magistrado</td>
+                            <td class="text-center">7</td>
+                        </tr>
+
+                        <tr class="jd">
+                            <td>Juzgado de Distrito</td>
+                            <td>Jueza o Juez</td>
+                            <td class="text-center">5</td>
+                        </tr>
+
+                    </tbody>
+                </table>
+
+            </div>
+
+            <div class="col mb-4 border border-warning rounded py-4 ms-1">
+                <h2 class="text-center">Cargos Estatales</h2>
+                <table class="table table-striped table-bordered">
+                    <thead>
+                        <tr>
+                            <th>Cargo</th>
+                            <th>Ámbito</th>
+                            <th>Puestos</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Magistrado/a del Tribunal de Conciliación y Arbitraje del Estado</td>
+                            <td class="text-center">Estatal</td>
+                            <td class="text-center">3</td>
+                        </tr>
+                        <tr>
+                            <td>Magistrado/a del Tribunal de Justicia Administrativa del Estado</td>
+                            <td class="text-center">Estatal</td>
+                            <td class="text-center">3</td>
+                        </tr>
+                        <tr>
+                            <td>Magistrado/a del Tribunal de Disciplina Judicial</td>
+                            <td class="text-center">Estatal</td>
+                            <td class="text-center">3</td>
+                        </tr>
+                        <tr>
+                            <td>Magistrado/a del Tribunal Superior del Estado</td>
+                            <td class="text-center">Estatal</td>
+                            <td class="text-center">4</td>
+                        </tr>
+                        <tr>
+                            <td>Juez/a del Poder Judicial del Estado</td>
+                            <td class="text-center">Estatal</td>
+                            <td class="text-center">6</td>
+                        </tr>
+                        <tr>
+                            <td>Juez/a de Distrito Judicial Penal</td>
+                            <td class="text-center"><a href="{% url 'djp_detail' entidad=ent.entidad djp=2 %}">Guridi y Alcocer</a></td>
+                            <td class="text-center">6</td>
+                        </tr>
+                        <tr>
+                            <td>Juez/a de Distrito Judicial Penal</td>
+                            <td class="text-center"><a href="{% url 'djp_detail' entidad=ent.entidad djp=1 %}">Sanchez Piedras</a></td>
+                            <td class="text-center">6</td>
+                        </tr>
+                        <tr>
+                            <td>Juez/a de Distrito Judicial Civil</td>
+                            <td class="text-center"><a href="{% url 'djc_detail' entidad=ent.entidad djc=1 %}">Cuahutémoc</a></td>
+                            <td class="text-center">1</td>
+                        </tr>
+                        <tr>
+                            <td>Juez/a de Distrito Judicial Civil</td>
+                            <td class="text-center"><a href="{% url 'djc_detail' entidad=ent.entidad djc=3 %}">Morelos</a></td>
+                            <td class="text-center">1</td>
+                        </tr>
+                        <tr>
+                            <td>Juez/a de Distrito Judicial Civil</td>
+                            <td class="text-center"><a href="{% url 'djc_detail' entidad=ent.entidad djc=4 %}">Ocampo</a></td>
+                            <td class="text-center">1</td>
+                        </tr>
+                        <tr>
+                            <td>Juez/a de Distrito Judicial Civil</td>
+                            <td class="text-center"><a href="{% url 'djc_detail' entidad=ent.entidad djc=5 %}">Xicohténcatl</a></td>
+                            <td class="text-center">1</td>
+                        </tr>
+                        <tr>
+                            <td>Juez/a de Distrito Judicial Civil</td>
+                            <td class="text-center"><a href="{% url 'djc_detail' entidad=ent.entidad djc=6 %}">Zaragoza</a></td>
+                            <td class="text-center">1</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

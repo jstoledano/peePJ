@@ -6,11 +6,13 @@ from .views import (
     DistritoDetailView,
     DistritoLocalDetailView,
     DJPDetailView,
-    DJCDetailView
+    DJCDetailView,
+    IndexView
 )
 
 
 urlpatterns = [
+    path('', IndexView.as_view(), name='index'),
     path('djc/<int:entidad>/<int:djc>/', DJCDetailView.as_view(), name='djc_detail'),
     path('djp/<int:entidad>/<int:djp>/', DJPDetailView.as_view(), name='djp_detail'),
     path('distrito_local/<int:entidad>/<int:distrito>/', DistritoLocalDetailView.as_view(), name='distrito_local_detail'),
