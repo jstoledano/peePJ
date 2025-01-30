@@ -418,6 +418,114 @@
   }
 },
 {
+  "model": "gis.cargosdjp",
+  "pk": 1,
+  "fields": {
+    "entidad": 29,
+    "djp": 2,
+    "cargo": "Juez o Jueza Sexta del Juzgado de Control y de juicio oral"
+  }
+},
+{
+  "model": "gis.cargosdjp",
+  "pk": 2,
+  "fields": {
+    "entidad": 29,
+    "djp": 2,
+    "cargo": "JUEZ O JUEZA DE CONTROL DEL SISTEMA ACUSATORIO PENAL"
+  }
+},
+{
+  "model": "gis.cargosdjp",
+  "pk": 3,
+  "fields": {
+    "entidad": 29,
+    "djp": 2,
+    "cargo": "JUEZA TERCERO DEL JUZGADO DE CONRTOL Y JUICIO ORAL"
+  }
+},
+{
+  "model": "gis.cargosdjp",
+  "pk": 4,
+  "fields": {
+    "entidad": 29,
+    "djp": 2,
+    "cargo": "JUEZ OCTAVO DEL JUZGADO DE CONTROL Y DE JUCIO ORAL"
+  }
+},
+{
+  "model": "gis.cargosdjp",
+  "pk": 5,
+  "fields": {
+    "entidad": 29,
+    "djp": 2,
+    "cargo": "JUEZ SEPTIMO DEL JUZGADO DE CONTROL Y JUICIO ORAL"
+  }
+},
+{
+  "model": "gis.cargosdjp",
+  "pk": 6,
+  "fields": {
+    "entidad": 29,
+    "djp": 2,
+    "cargo": "JUEZA DEL TRIBUNAL DE ENJUICIAMIENTO DEL JUZGADO DE CONTROL Y DE JUICIO ORAL"
+  }
+},
+{
+  "model": "gis.cargosdjp",
+  "pk": 7,
+  "fields": {
+    "entidad": 29,
+    "djp": 1,
+    "cargo": "JUEZ O JUEZA DE CONTROL Y DE JUICIO ORAL"
+  }
+},
+{
+  "model": "gis.cargosdjp",
+  "pk": 8,
+  "fields": {
+    "entidad": 29,
+    "djp": 1,
+    "cargo": "JUEZ DE CONTROL Y DE JUICIO ORAL ESPECIALIZADO EN JUSTICIA PARA ADOLESCENTES"
+  }
+},
+{
+  "model": "gis.cargosdjp",
+  "pk": 9,
+  "fields": {
+    "entidad": 29,
+    "djp": 1,
+    "cargo": "JUEZ OCTAVO DEL JUZGADO DE CONTROL Y DE JUICIO ORAL ESPECIALIZADO EN JUSTICIA PARA ADOLESCENTES"
+  }
+},
+{
+  "model": "gis.cargosdjp",
+  "pk": 10,
+  "fields": {
+    "entidad": 29,
+    "djp": 1,
+    "cargo": "JUEZA PRIMERA DEL JUZGADO DE CONTROL Y JUCIO ORAL ESPECIALIZADO EN JUSTICIA PARA ADOLESCENTES"
+  }
+},
+{
+  "model": "gis.cargosdjp",
+  "pk": 11,
+  "fields": {
+    "entidad": 29,
+    "djp": 1,
+    "cargo": "JUEZ DEL TRIBUNAL DE ENJUICIAMIENTO DEL JUZGADO DE CONTROL Y DE JUICIO ORAL ESPECIALIZADO EN JUSTICIA PARA ADOLESCENTES"
+  }
+},
+{
+  "model": "gis.cargosdjp",
+  "pk": 12,
+  "fields": {
+    "entidad": 29,
+    "djp": 1,
+    "cargo": "JUEZ TERCERO DE CONTROL Y JUICIO ORAL ESPECIALIZADO EN JUSTICIA PARA ADOLESCENTES"
+  }
+},
+{
   "model": "gis.djc",
   "pk": 1,
   "fields": {
@@ -587,7 +695,7 @@
   "fields": {
     "entidad": 29,
     "municipio": 11,
-    "nombre": "MU?Z DE DOMINGO ARENAS",
+    "nombre": "MUÑOZ DE DOMINGO ARENAS",
     "djp": 1,
     "djc": 3
   }
@@ -598,7 +706,7 @@
   "fields": {
     "entidad": 29,
     "municipio": 12,
-    "nombre": "ESPA?TA",
+    "nombre": "ESPAÑITA",
     "djp": 1,
     "djc": 4
   }
