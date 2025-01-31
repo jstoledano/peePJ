@@ -47,6 +47,39 @@
     </div><!-- ./datos -->
 
     <div class="row"><!-- secciones -->
+        <div class="col">
+
+            <div class="row">
+                <h2>Cargos Federales</h2>
+                {% include 'partials/_federales.html' %}
+            </div>
+
+            <div class="row">
+                <h2>Cargos Locales</h2>
+                <table class="table table-striped table-rounded table-hover table-bordered table-sm">
+                    <thead class="table-dark">
+                        <tr>
+                            <th>Cargos</th>
+                            <th>Cargo</th>
+                            <th>Ámbito</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% include 'partials/_locales.html' %}
+                        {% for obj in djp.cargosdjp_set.all %}
+                            <tr>
+                                <td class="text-center">1</td>
+                                <td>{{ obj.cargo }}</td>
+                                <td>{{ obj.djp }}</td>
+                            </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+
+
+        </div>
+    <div class="col">
         <h2>Secciones</h2>
         <table class="table table-striped">
             <thead>
@@ -58,7 +91,12 @@
             <tbody>
                 {% for municipio, secciones in secciones_por_municipio.items %}
                     <tr>
-                        <td>{{ municipio.nombre }}</td>
+                        <td>
+                            <a href="{% url 'municipio_detail' entidad=municipio.entidad.entidad municipio=municipio.municipio %}">
+                                {{ municipio.municipio|stringformat:"03d" }}
+                                {{ municipio.nombre }}
+                            </a>
+                        </td>
                         <td>
                             {% for seccion in secciones %}
                                 <a href="{% url 'seccion_detail' entidad=seccion.entidad.entidad seccion=seccion.seccion %}" class="m-2">{{ seccion.seccion|stringformat:"04d" }}</a>
@@ -68,6 +106,7 @@
                 {% endfor %}
             </tbody>
         </table>
+    </div>
     </div><!-- ./secciones -->
 </div>
 {% endblock content %}

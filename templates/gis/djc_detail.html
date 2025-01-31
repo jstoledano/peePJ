@@ -73,5 +73,37 @@
             </tbody>
         </table>
     </div><!-- ./secciones -->
+
+            <div class="row"><!-- Cargos -->
+        <div class="col">
+            <h2>Cargos Federales</h2>
+            {% include 'partials/_federales.html' %}
+        </div>
+        <div class="col">
+            <h2>Cargos Locales</h2>
+            <table class="table table-striped table-rounded table-hover table-bordered table-sm">
+                <thead class="table-dark">
+                    <tr>
+                        <th>Cargos</th>
+                        <th>Cargo</th>
+                        <th>Ámbito</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% include 'partials/_locales.html' %}
+                    <tr></tr>
+                    {% for obj in djc.cargosdjc_set.all %}
+                        <tr>
+                            <td class="text-center">1</td>
+                            <td>{{ obj.cargo }}</td>
+                            <td>{{ obj.djc }}</td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div><!-- ./Cargos -->
+
+
 </div>
 {% endblock content %}
