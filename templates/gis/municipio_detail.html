@@ -21,49 +21,79 @@
             <div class="row">
                 <div class="col">
                     <h2>Información general</h2>
-                    <table class="table table-striped">
-                        <tbody>
-                            <tr>
-                                <th>Municipio</th>
-                                <td>{{ municipio.municipio|stringformat:"03d" }}</td>
-                            </tr>
-                            <tr>
-                                <th>Nombre</th>
-                                <td>{{ municipio.nombre }}</td>
-                            </tr>
-                            <tr>
-                                <th>Secciones</th>
-                                <td>{{ municipio.seccion_set.count }} secciones</td>
-                            <tr>
-                                <th>Padrón Electoral</th>
-                                <td>{{ municipio.get_pe|intcomma }}</td>
-                            </tr>
-                            <tr>
-                                <th>Lista Nominal</th>
-                                <td>{{ municipio.get_ln|intcomma }}</td>
-                            </tr>
-                            <tr>
-                                <th>Distrito Judicial Penal</th>
-                                <td><a href="{% url 'djp_detail' entidad=municipio.entidad.entidad djp=municipio.djp.djp %}">{{ municipio.djp.nombre }}</a></td>
-                            </tr>
-                            <tr>
-                                <th>Distrito Judicial Civil</th>
-                                <td><a href="{% url 'djc_detail' entidad=municipio.entidad.entidad djc=municipio.djc.djc %}">{{ municipio.djc.nombre }}</a></td>
-                            </tr>
-                        </tbody>
-                    </table>
+
+                    <div class="row">
+                        <div class="col-sm-4"><strong>Municipio</strong></div>
+                        <div class="col">{{ municipio.municipio|stringformat:"03d" }} {{ municipio.nombre }}</div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-4"><strong>Secciones</strong></div>
+                        <div class="col">{{ municipio.seccion_set.count }} secciones</div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-4"><strong>Padrón Electoral</strong></div>
+                        <div class="col">{{ municipio.get_pe|intcomma }}</div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-4"><strong>Lista Nominal</strong></div>
+                        <div class="col">{{ municipio.get_ln|intcomma }}</div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-4"><strong>Distrito Judicial Penal</strong></div>
+                        <div class="col"><a href="{% url 'djp_detail' entidad=municipio.entidad.entidad djp=municipio.djp.djp %}">{{ municipio.djp.nombre }}</a></div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-4"><strong>Distrito Judicial Civil</strong></div>
+                        <div class="col"><a href="{% url 'djc_detail' entidad=municipio.entidad.entidad djc=municipio.djc.djc %}">{{ municipio.djc.nombre }}</a></div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-4"><strong>Secciones</strong></div>
+                        <div class="col">
+                            {% for seccion in municipio.seccion_set.all %}
+                                <a href="{% url 'seccion_detail' entidad=municipio.entidad.id seccion=seccion.seccion %}" class="m-2">{{ seccion.seccion|stringformat:"04d" }}</a>
+                            {% endfor %}
+                        </div>
+                    </div>
                 </div>
             </div>
-        </div>
     </div><!-- ./datos -->
 
-    <div class="row"><!-- secciones -->
-        <h2>Secciones</h2>
-        <div class="d-flex flex-wrap">
-            {% for seccion in municipio.seccion_set.all %}
-                <a href="{% url 'seccion_detail' entidad=municipio.entidad.id seccion=seccion.seccion %}" class="btn btn-primary m-2">{{ seccion.seccion|stringformat:"04d" }}</a>
-            {% endfor %}
+        <div class="row"><!-- Cargos -->
+        <div class="col">
+            <h2>Cargos Federales</h2>
+            {% include 'partials/_federales.html' %}
         </div>
-    </div><!-- ./secciones -->
+        <div class="col">
+            <h2>Cargos Locales</h2>
+            <table class="table table-striped table-rounded table-hover table-bordered table-sm">
+                <thead class="table-dark">
+                    <tr>
+                        <th>Cargos</th>
+                        <th>Cargo</th>
+                        <th>Ámbito</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% include 'partials/_locales.html' %}
+                    {% for obj in municipio.djp.cargosdjp_set.all %}
+                        <tr>
+                            <td class="text-center">1</td>
+                            <td>{{ obj.cargo }}</td>
+                            <td>{{ obj.djp }}</td>
+                        </tr>
+                    {% endfor %}
+                    {% for obj in municipio.djc.cargosdjc_set.all %}
+                        <tr>
+                            <td class="text-center">1</td>
+                            <td>{{ obj.cargo }}</td>
+                            <td>{{ obj.djc }}</td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div><!-- ./Cargos -->
+
+
 </div>
 {% endblock content %}

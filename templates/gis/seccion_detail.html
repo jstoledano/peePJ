@@ -11,7 +11,7 @@
 <div class="row"><!-- MGE -->
     <div class="col-md-6 col-sm-12">
         <embed
-            src="{% static 'pusis/466.pdf' %}#zoom=page-width"
+            src="{% static 'pusis/' %}{{ seccion.seccion }}.pdf#zoom=page-width"
             type="application/pdf"
             width="100%"
             height="450px" />
@@ -109,6 +109,13 @@
                             <td class="text-center">1</td>
                             <td>{{ obj.cargo }}</td>
                             <td>{{ obj.djp }}</td>
+                        </tr>
+                    {% endfor %}
+                    {% for obj in seccion.municipio.djc.cargosdjc_set.all %}
+                        <tr>
+                            <td class="text-center">1</td>
+                            <td>{{ obj.cargo }}</td>
+                            <td>{{ obj.djc }}</td>
                         </tr>
                     {% endfor %}
                 </tbody>

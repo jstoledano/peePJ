@@ -119,6 +119,21 @@ class DJC(models.Model):
         return Seccion.objects.filter(municipio__djc=self).aggregate(suma_ln=Sum('ln'))['suma_ln']
 
 
+class CargosDJC(models.Model):
+    entidad = models.ForeignKey(Entidad, on_delete=models.CASCADE)
+    djc = models.ForeignKey(DJC, on_delete=models.CASCADE)
+    cargo = models.CharField(max_length=150)
+    puestos = models.PositiveSmallIntegerField
+
+    class Meta:
+        verbose_name = "Cargo DJC"
+        verbose_name_plural = "Cargos DJC"
+        ordering = ['entidad', 'djc', 'cargo']
+
+    def __str__(self):
+        return f"{self.entidad.entidad} DJC: {self.djc.nombre} {self.cargo}"
+
+
 class Municipio(BaseSeccion):
     entidad = models.ForeignKey(Entidad, on_delete=models.CASCADE)
     municipio = models.PositiveSmallIntegerField()

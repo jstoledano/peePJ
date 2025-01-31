@@ -6,6 +6,7 @@ from gis.models import (
     DJP,
     CargosDJP,
     DJC,
+    CargosDJC,
     Municipio,
     Seccion,
     ZORE,
@@ -19,6 +20,7 @@ admin.site.register(DistritoLocal)
 admin.site.register(DJP)
 admin.site.register(CargosDJP)
 admin.site.register(DJC)
+admin.site.register(CargosDJC)
 admin.site.register(Municipio)
 admin.site.register(Seccion)
 admin.site.register(ZORE)
